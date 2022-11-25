@@ -13,22 +13,20 @@ public class Main {
     * Sum numbers from a to b recursively
     * */
     public static int sumBetween(int a, int b) {
-        int res = 0;
-        if (a <= b) {
-            res = a + sumBetween(a + 1, b);
+        if (a == b) {
+            return b;
         }
-        return res;
+        return a + sumBetween(a + 1, b);
     }
 
     /* 2.1.
     * Recursive function to sum numbers from 1 to x
     * */
     public static int sumTo(int x) {
-        int res = 0;
-        if (x != 0) {
-            res = x + sumTo(x - 1);
+        if (x == 0) {
+            return 0;
         }
-        return res;
+        return x + sumTo(x - 1);
     }
 
     /* 3. Find Second Largest:
@@ -59,11 +57,10 @@ public class Main {
     * Recursive function to calculate the digits in a number
     * */
     public static int sumOfDigits(int x) {
-        int res = 0;
-        if (x != 0) {
-            res = x % 10 + sumOfDigits(x / 10);
+        if (x == 0) {
+            return 0;
         }
-        return res;
+        return x % 10 + sumOfDigits(x / 10);
     }
 
     /* 5. Ways to Climb Stairs
@@ -107,6 +104,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        System.out.println(countSubstrings("an", "banana"));
+        System.out.println(sumOfDigits(12345));
     }
 }
